@@ -1,0 +1,630 @@
+@charset "UTF-8";
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff8e3;
+  padding: 0;
+}
+
+.panel {
+  -webkit-box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.3);
+  margin-top: 50px;
+}
+
+.mainPannel {
+  width: 1024px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #424242;
+}
+
+.logo1 {
+  width: 110px;
+  height: 110px;
+  margin-right: 97px;
+}
+
+.selectTitle {
+  margin: 0 0 0 0;
+  color: #FFD366;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.selectTitle2 {
+  margin: 20px 0 0 0;
+}
+
+.inputHeight, .inputWeight {
+  border: solid 1px #FFD366;
+  background-color: rgba(255, 255, 255, 0.18);
+  padding: 5px 8px 5px 8px;
+  color: white;
+  border-radius: 5px;
+}
+
+.inputHeight::-webkit-input-placeholder, .inputWeight::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.inputHeight:-ms-input-placeholder, .inputWeight:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.inputHeight::-ms-input-placeholder, .inputWeight::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.inputHeight::placeholder, .inputWeight::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 100%;
+  background-color: #FFD366;
+  color: #424242;
+  margin-left: 97px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.perfect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 100%;
+  border: solid 6px #86D73E;
+  background-color: transparent;
+  margin-left: 97px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 28px;
+  color: #86D73E;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.perfect::after {
+  content: "理想";
+  position: absolute;
+  left: 130%;
+  font-size: 20px;
+  width: 50px;
+  -webkit-transition: 0.4s ease-in-out 0.3s;
+  transition: 0.4s ease-in-out 0.3s;
+}
+
+.tooLight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 100%;
+  border: solid 6px #31BAF9;
+  background-color: transparent;
+  margin-left: 97px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 28px;
+  color: #31BAF9;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.tooLight::after {
+  content: "過輕";
+  position: absolute;
+  left: 130%;
+  font-size: 20px;
+  width: 50px;
+  -webkit-transition: 0.4s ease-in-out 0.3s;
+  transition: 0.4s ease-in-out 0.3s;
+}
+
+.littleFat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 100%;
+  border: solid 6px #FF982D;
+  background-color: transparent;
+  margin-left: 97px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 28px;
+  color: #FF982D;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.littleFat::after {
+  content: "稍微過重";
+  position: absolute;
+  left: 130%;
+  font-size: 20px;
+  width: 100px;
+  -webkit-transition: 0.4s ease-in-out 0.3s;
+  transition: 0.4s ease-in-out 0.3s;
+}
+
+.fat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 100%;
+  border: solid 6px #FF6C02;
+  background-color: transparent;
+  margin-left: 97px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 28px;
+  color: #FF6C02;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.fat::after {
+  content: "肥胖";
+  position: absolute;
+  left: 130%;
+  font-size: 20px;
+  width: 50px;
+  -webkit-transition: 0.4s ease-in-out 0.3s;
+  transition: 0.4s ease-in-out 0.3s;
+}
+
+.tooFat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 100%;
+  border: solid 6px #FF1200;
+  background-color: transparent;
+  margin-left: 97px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 28px;
+  color: #FF1200;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.tooFat::after {
+  content: "過度肥胖";
+  position: absolute;
+  left: 130%;
+  font-size: 20px;
+  width: 100px;
+  -webkit-transition: 0.4s ease-in-out 0.3s;
+  transition: 0.4s ease-in-out 0.3s;
+}
+
+.initPerfect {
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 75%;
+  top: 70%;
+  border-radius: 100%;
+  background-color: #86D73E;
+  border: solid 3px #424242;
+  -webkit-transition: 0.4s ease-in-out 0.1s;
+  transition: 0.4s ease-in-out 0.1s;
+}
+
+.initToolight {
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 75%;
+  top: 70%;
+  border-radius: 100%;
+  background-color: #31BAF9;
+  border: solid 3px #424242;
+  -webkit-transition: 0.4s ease-in-out 0.1s;
+  transition: 0.4s ease-in-out 0.1s;
+}
+
+.initLittleFat {
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 75%;
+  top: 70%;
+  border-radius: 100%;
+  background-color: #FF982D;
+  border: solid 3px #424242;
+  -webkit-transition: 0.4s ease-in-out 0.1s;
+  transition: 0.4s ease-in-out 0.1s;
+}
+
+.initFat {
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 75%;
+  top: 70%;
+  border-radius: 100%;
+  background-color: #FF6C02;
+  border: solid 3px #424242;
+  -webkit-transition: 0.4s ease-in-out 0.1s;
+  transition: 0.4s ease-in-out 0.1s;
+}
+
+.initToofat {
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 75%;
+  top: 70%;
+  border-radius: 100%;
+  background-color: #FF1200;
+  border: solid 3px #424242;
+  -webkit-transition: 0.4s ease-in-out 0.1s;
+  transition: 0.4s ease-in-out 0.1s;
+}
+
+.initAni {
+  -webkit-animation: rotateAni 0.6s ease-in-out 1;
+          animation: rotateAni 0.6s ease-in-out 1;
+}
+
+.hide {
+  display: none;
+}
+
+.resultText {
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.perfectText::after {
+  content: "BMI";
+  display: block;
+  font-size: 2px;
+  color: #86D73E;
+}
+
+.tooLightText::after {
+  content: "BMI";
+  display: block;
+  font-size: 2px;
+  color: #31BAF9;
+}
+
+.littleFatText::after {
+  content: "BMI";
+  display: block;
+  font-size: 2px;
+  color: #FF982D;
+}
+
+.fatText::after {
+  content: "BMI";
+  display: block;
+  font-size: 2px;
+  color: #FF6C02;
+}
+
+.toofatText::after {
+  content: "BMI";
+  display: block;
+  font-size: 2px;
+  color: #FF1200;
+}
+
+.history {
+  width: 1024px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0px 50px 0px;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1024px;
+  height: 100px;
+  background-color: #FFD366;
+}
+
+.logo2 {
+  width: 50px;
+  height: 50px;
+  -webkit-filter: brightness(0.1);
+          filter: brightness(0.1);
+}
+
+.allList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.listTitle {
+  font-size: 12px;
+  margin-right: 8px;
+  width: 60px;
+  text-align: right;
+}
+
+.listContent {
+  width: 20%;
+  margin-left: 20px;
+}
+
+.perfectList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 60px;
+  border-left: solid 5px #86D73F;
+  background-color: white;
+  padding-left: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.perfectList::before {
+  content: '理想';
+  font-size: 22px;
+  width: 100px;
+}
+
+.toolightList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 60px;
+  border-left: solid 5px #31BAF9;
+  background-color: white;
+  padding-left: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.toolightList::before {
+  content: '過輕';
+  font-size: 22px;
+  width: 100px;
+}
+
+.littlefatList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 60px;
+  border-left: solid 5px #FF982D;
+  background-color: white;
+  padding-left: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.littlefatList::before {
+  content: '稍微過重';
+  font-size: 22px;
+  width: 100px;
+}
+
+.fatList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 60px;
+  border-left: solid 5px #FF6C02;
+  background-color: white;
+  padding-left: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.fatList::before {
+  content: '肥胖';
+  font-size: 22px;
+  width: 100px;
+}
+
+.toofatList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 60px;
+  border-left: solid 5px #FF1200;
+  background-color: white;
+  padding-left: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.toofatList::before {
+  content: '過度肥胖';
+  font-size: 22px;
+  width: 100px;
+}
+
+@-webkit-keyframes rotateAni {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateAni {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=all.css.map */
