@@ -4,16 +4,26 @@ var resultButton = document.querySelector('.result');
 var resultText = document.querySelector('.resultText');
 var initButton = document.querySelector('.init');
 var historyList = document.querySelector('.historyList');
+var clearButton = document.querySelector('.clearButton');
 var historyArray = JSON.parse(localStorage.getItem('dataArray'))||[];
 
+updateList();
 
 function add(){
-    var BMIvalue = 0
-    var heightNumber = parseInt(userHeight.value)/100;
-    var heightNumverlocal = parseInt(userHeight.value);
-    var weightNumber = parseInt(userWeight.value);
+    if (userHeight.value === '' || userHeight.value === 0 || userWeight === '' || userWeight === 0){
+        alert('請輸入正確的身高及體重！')
+    }else{
+        showResult();
+    };
+}
+
+function showResult(){
+    let BMIvalue = 0
+    let heightNumber = parseInt(userHeight.value)/100;
+    let heightNumberlocal = parseInt(userHeight.value);
+    let weightNumber = parseInt(userWeight.value);
     BMIvalue = (weightNumber/(heightNumber*heightNumber)).toFixed(1);
-    var classSelector = ''
+    let classSelector = ''
     // console.log(BMIvalue);
     // console.log(typeof(BMIvalue));
     if (BMIvalue >= 18.5 && BMIvalue <= 25){
@@ -52,12 +62,11 @@ function add(){
         initButton.setAttribute('class','init initToofat');
         classSelector = 'allList toofatList'; 
     }
-    var infoObj = {class: classSelector,bmi: BMIvalue,height: heightNumverlocal,weight: weightNumber};
+    let infoObj = {class: classSelector,bmi: BMIvalue,height: heightNumberlocal,weight: weightNumber};
     historyArray.push(infoObj);
-    console.log(historyArray);
     updateList();
     localStorage.setItem('dataArray',JSON.stringify(historyArray));
-}
+};
 
 function init(event){
     event.stopPropagation();
@@ -74,28 +83,43 @@ function changeStyle(){
     userWeight.value = ''; 
     initButton.style.transform = 'rotate(0deg)'; 
 };
+function clearAll(){
+    historyArray = [];
+    localStorage.setItem('dataArray',JSON.stringify(historyArray));
+    init(event);
+    updateList();
+}
 
 resultButton.addEventListener('click',add);
 initButton.addEventListener('click',init);
+clearButton.addEventListener('click',clearAll);
+
 
 
 function updateList(){
-    var str = '';
-    var BMIvalue = 0;
-    var heightNumber = parseInt(userHeight.value)/100; 
-    var weightNumber = parseInt(userWeight.value);
-    var heightNumberCM = parseInt(userHeight.value);
+    let str = '';
+    let BMIvalue = 0;
+    let heightNumber = parseInt(userHeight.value)/100; 
+    let weightNumber = parseInt(userWeight.value);
     BMIvalue = (weightNumber/(heightNumber*heightNumber)).toFixed(1);
-    // var classSelector = ''
-    // if (BMIvalue >= 18.5 && BMIvalue <= 25){
-    //     classSelector = 'allList perfectList';
-    // }else if (BMIvalue < 18.5 ){
-    //     classSelector = 'allList toolightList';
-    // }
-    for (var i=0;i<historyArray.length;i++){
+    for (let i=0;i<historyArray.length;i++){
         str += '<li class="'+historyArray[i].class+'"><span class="listContent"><span class="listTitle">BMI</span>'+historyArray
-        [i].bmi+'</span><span class="listContent"><span class="listTitle">weight</span>'+historyArray[i].weight+'kg </span><span class="listContent"><span class="listTitle">height</span>'+historyArray[i].height+'cm</span></li>'
+        [i].bmi+'</span><span class="listContent"><span class="listTitle">weight</span>'+historyArray[i].weight+'kg </span><span class="listContent"><span class="listTitle">height</span>'+historyArray[i].height+'cm</span><a data-num="'+i+'" href="" class="delEach">刪除</a></li>'
     }
     historyList.innerHTML = str;
+    deleteOne();
 };
-updateList();
+
+function deleteOne(){
+    var delEach = document.querySelectorAll('.delEach');
+    for (let i=0;i<delEach.length;i++){
+        let num = delEach[i].dataset.num;
+        delEach[i].addEventListener('click',function(e){
+            e.preventDefault();
+            historyArray.splice(num,1);
+            updateList();
+            localStorage.setItem('dataArray',JSON.stringify(historyArray));
+        });
+    };
+    
+};
