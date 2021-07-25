@@ -19,9 +19,9 @@ function add(){
 
 function showResult(){
     let BMIvalue = 0
-    let heightNumber = parseInt(userHeight.value)/100;
-    let heightNumberlocal = parseInt(userHeight.value);
-    let weightNumber = parseInt(userWeight.value);
+    const heightNumber = parseInt(userHeight.value)/100;
+    const heightNumberlocal = parseInt(userHeight.value);
+    const weightNumber = parseInt(userWeight.value);
     BMIvalue = (weightNumber/(heightNumber*heightNumber)).toFixed(1);
     let classSelector = ''
     // console.log(BMIvalue);
@@ -99,8 +99,8 @@ clearButton.addEventListener('click',clearAll);
 function updateList(){
     let str = '';
     let BMIvalue = 0;
-    let heightNumber = parseInt(userHeight.value)/100; 
-    let weightNumber = parseInt(userWeight.value);
+    const heightNumber = parseInt(userHeight.value)/100; 
+    const weightNumber = parseInt(userWeight.value);
     BMIvalue = (weightNumber/(heightNumber*heightNumber)).toFixed(1);
     for (let i=0;i<historyArray.length;i++){
         str += '<li class="'+historyArray[i].class+'"><span class="listContent"><span class="listTitle">BMI</span>'+historyArray
@@ -113,7 +113,7 @@ function updateList(){
 function deleteOne(){
     var delEach = document.querySelectorAll('.delEach');
     for (let i=0;i<delEach.length;i++){
-        let num = delEach[i].dataset.num;
+        const num = delEach[i].dataset.num;
         delEach[i].addEventListener('click',function(e){
             e.preventDefault();
             historyArray.splice(num,1);
